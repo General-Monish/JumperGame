@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-// =========================================== I made a change in the Game manager script ===============================
+// =========================================== I made a change in the Game manager script ===============================git 
 public class Gamemanager : MonoBehaviour
 {
     [SerializeField] private GameObject obstacle;
