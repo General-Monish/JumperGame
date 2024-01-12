@@ -3,35 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-// =========================================== I made a change in the Game manager script ===============================git 
-public class Gamemanager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject obstacle;
-     private int score=0;
+    [SerializeField] private GameObject[] obstacles;
+    private int score = 0;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObject playButton;
-    [SerializeField] private GameObject Player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject player;
+
+    private int currentObstacleIndex = 0;
 
     IEnumerator SpawnObstacle()
     {
         while (true)
         {
             float waitTime = Random.Range(0.5f, 2f);
-            yield return new WaitForSeconds(waitTime);
-            Instantiate(obstacle, spawnPoint.position, Quaternion.identity);
-        }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            // Instantiate the next obstacle at the fixed position
+            Instantiate(obstacles[currentObstacleIndex], spawnPoint.position, Quaternion.identity);
+
+            // Increment the index for the next iteration
+            currentObstacleIndex = (currentObstacleIndex + 1) % obstacles.Length;
+
+            yield return new WaitForSeconds(waitTime);
+        }
     }
 
     void ScoreUp()
@@ -42,7 +38,7 @@ public class Gamemanager : MonoBehaviour
 
     public void GameStart()
     {
-        Player.SetActive(true);
+        player.SetActive(true);
         playButton.SetActive(false);
         StartCoroutine("SpawnObstacle");
         InvokeRepeating("ScoreUp", 2f, 1f);
