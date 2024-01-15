@@ -255,11 +255,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905382ade7f635e46abec407e7db41a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 45149726489318013, guid: 7cab02ba504209442aca6c7e86c1a7fa, type: 3}
+  obstacles:
+  - {fileID: 45149726489318013, guid: 5ae9b051e08b4bf4fb98b82a2cd6cdd1, type: 3}
+  - {fileID: 3860063740907832277, guid: ada2dc7ca7a72984bbe62f1e1c7fb418, type: 3}
+  - {fileID: 45149726489318013, guid: 7cab02ba504209442aca6c7e86c1a7fa, type: 3}
   spawnPoint: {fileID: 1527789293}
   scoreText: {fileID: 828796594}
   playButton: {fileID: 1654309432}
-  Player: {fileID: 699882280}
+  player: {fileID: 699882280}
 --- !u!4 &633419604
 Transform:
   m_ObjectHideFlags: 0
@@ -942,7 +945,7 @@ Transform:
   m_GameObject: {fileID: 1527789292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.29, z: 7.31}
+  m_LocalPosition: {x: 0, y: 0.29, z: 11.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
