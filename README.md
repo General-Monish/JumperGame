@@ -1,2 +1,2 @@
-hyfhg6ggbbvffmmmmhvgdfhvcffgggdfbbbbh# JumperGame
+hyfhg6ggbbvfdfhvcffgggdfbbbbh# JumperGame
 .
